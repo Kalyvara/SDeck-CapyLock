@@ -22,8 +22,8 @@ v0.1
     display: grid;
     margin-left: 15px;
     margin-bottom: calc(40px + 8px);
-    grid-template-columns: repeat(5, 1);
-    grid-template-rows: repeat(5, 1);
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto);
     grid-column-gap: 32px;
     /* grid-column-gap: 24px; */
     grid-row-gap: 0;
