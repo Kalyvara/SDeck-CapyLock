@@ -1,0 +1,3 @@
+:root {
+    --capylock-numpad-bg: radial-gradient(circle at 80% 0%, var(--capylock-numpad-bg-grad1), var(--capylock-numpad-bg-grad2));
+}

@@ -1,0 +1,15 @@
+.lockscreen_Container_3rFFU::after,
+.lockscreen_Details_aLaNw::before,
+.lockscreen_Details_aLaNw div > img,
+.lockscreen_Details_aLaNw .lockscreen_Prompt_3aUT8,
+.lockscreen_Directions_vNjDQ {
+    display: none;
+}
+.lockscreen_NumericButtonInput_2wl_h {
+    margin-top: auto;
+}
+.lockscreen_Details_aLaNw .lockscreen_IncorrectPIN_OmybP {
+    position: absolute;
+    left: 40px;
+    bottom: 215px;
+}

@@ -1,0 +1,4 @@
+.lockscreen_Details_aLaNw::before,
+.lockscreen_Details_aLaNw div > img {
+    display: none;
+}

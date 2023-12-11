@@ -1,0 +1,3 @@
+:root {
+    --capylock-profile-bg: radial-gradient(circle at 80% 0%, var(--capylock-profile-bg-grad1), var(--capylock-profile-bg-grad2));
+}

@@ -1,0 +1,16 @@
+/* Using a pseudo-element because CSS doesn't support variables for multiple backgrounds => wtf? */
+
+.lockscreen_Container_3rFFU::after {
+    position: absolute;
+    width: 100%;
+    height: var(--capylock-header-size);
+    background: var(--capylock-header-bg);
+    content: "";
+    z-index: 0;
+}
+
+.lockscreen_Details_aLaNw .lockscreen_Prompt_3aUT8,
+.lockscreen_Details_aLaNw .lockscreen_Directions_vNjDQ,
+.lockscreen_Details_aLaNw .lockscreen_IncorrectPIN_OmybP {
+    z-index: 1;
+}

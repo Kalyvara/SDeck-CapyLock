@@ -1,0 +1,3 @@
+:root {
+    --capylock-header-bg: linear-gradient(to right, var(--capylock-header-bg-grad1), var(--capylock-header-bg-grad2));
+}

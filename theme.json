@@ -1,0 +1,489 @@
+{
+    "name": "CapyLock",
+    "author": "Capybara",
+    "version": "v0.1",
+    "manifest_version": 9,
+    "tabs": {
+        "default": [
+            "bigpicture"
+        ]
+    },
+    "inject": {
+        "cl_default.css": [],
+        "cl_header.css": []
+    },
+    "patches": {
+        "Lockscreen Background": {
+            "type": "dropdown",
+            "default": "Solid Color",
+            "values": {
+                "Solid Color": {},
+                "Gradient": {
+                    "cl_lockbg_gradient.css": []
+                },
+                "Image": {
+                    "cl_lockbg_image.css": []
+                }
+            },
+            "components": [
+                {
+                    "name": "Color Picker",
+                    "type": "color-picker",
+                    "on": "Solid Color",
+                    "default": "#1b1b1b",
+                    "css_variable": "capylock-lock-bg",
+                    "tabs": []
+                },
+                {
+                    "name": "Gradient Color 1",
+                    "type": "color-picker",
+                    "on": "Gradient",
+                    "default": "#34c58e",
+                    "css_variable": "capylock-lock-bg-grad1",
+                    "tabs": []
+                },
+                {
+                    "name": "Gradient Color 2",
+                    "type": "color-picker",
+                    "on": "Gradient",
+                    "default": "#2e5f80",
+                    "css_variable": "capylock-lock-bg-grad2",
+                    "tabs": []
+                },
+                {
+                    "name": "Image Picker",
+                    "type": "image-picker",
+                    "on": "Image",
+                    "default": "",
+                    "css_variable": "capylock-lock-bg-img",
+                    "tabs": []
+                }
+            ]
+        },
+        "Layout": {
+            "type": "dropdown",
+            "default": "Horizontal",
+            "values": {
+                "Horizontal": {},
+                "Horizontal No Profile": {
+                    "cl_layout_noprofile.css": []
+                },
+                "Minimal": {
+                    "cl_layout_minimal.css": []
+                }
+            }
+        },
+        "Header Span": {
+            "type": "slider",
+            "default": "Top Bar + Directions",
+            "values": {
+                "No Header": {},
+                "Top Bar": {
+                    "--capylock-header-size": [
+                        "40px"
+                    ]
+                },
+                "Top Bar + Directions": {
+                    "--capylock-header-size": [
+                        "110px"
+                    ]
+                }
+            }
+        },
+        "Header Background": {
+            "type": "dropdown",
+            "default": "OLED Black",
+            "values": {
+                "∅ None": {
+                    "--capylock-header-bg": [
+                        "#00000000"
+                    ]
+                },
+                "OLED Black": {
+                    "--capylock-header-bg": [
+                        "#000"
+                    ]
+                },
+                "Dark Gray": {
+                    "--capylock-header-bg": [
+                        "#141414"
+                    ]
+                },
+                "Bright Gray": {
+                    "--capylock-header-bg": [
+                        "#bdbdbd"
+                    ]
+                },
+                "Transparent Black": {
+                    "--capylock-header-bg": [
+                        "#00000080"
+                    ]
+                },
+                "Transparent White": {
+                    "--capylock-header-bg": [
+                        "#ffffff80"
+                    ]
+                },
+                "Marine Blue": {
+                    "--capylock-header-bg": [
+                        "#0d1226"
+                    ]
+                },
+                "Earthy Brown": {
+                    "--capylock-header-bg": [
+                        "#241e20"
+                    ]
+                },
+                "Wine Red": {
+                    "--capylock-header-bg": [
+                        "#400b1e"
+                    ]
+                },
+                "Beige": {
+                    "--capylock-header-bg": [
+                        "#b5ada1"
+                    ]
+                },
+                "Aubergine": {
+                    "--capylock-header-bg": [
+                        "#2a0f30"
+                    ]
+                },
+                "Orange": {
+                    "--capylock-header-bg": [
+                        "#9c3b1e"
+                    ]
+                },
+                "⚙️ Gradient...": {
+                    "cl_header_gradient.css": []
+                }
+            },
+            "components": [
+                {
+                    "name": "Gradient Color 1",
+                    "type": "color-picker",
+                    "on": "⚙️ Gradient...",
+                    "default": "#34c58e",
+                    "css_variable": "capylock-header-bg-grad1",
+                    "tabs": []
+                },
+                {
+                    "name": "Gradient Color 2",
+                    "type": "color-picker",
+                    "on": "⚙️ Gradient...",
+                    "default": "#2e5f80",
+                    "css_variable": "capylock-header-bg-grad2",
+                    "tabs": []
+                }
+            ]
+        },
+        "Header Text": {
+            "type": "dropdown",
+            "default": "White",
+            "values": {
+                "White": {
+                    "--capylock-header-fg": [
+                        "#fff"
+                    ]
+                },
+                "Black": {
+                    "--capylock-header-fg": [
+                        "#000"
+                    ]
+                },
+                "⚙️ Custom...": {}
+            },
+            "components": [
+                {
+                    "name": "Color Picker",
+                    "type": "color-picker",
+                    "on": "⚙️ Custom...",
+                    "default": "#eee",
+                    "css_variable": "capylock-header-fg",
+                    "tabs": []
+                }
+            ]
+        },
+        "NumPad Background": {
+            "type": "dropdown",
+            "default": "OLED Black",
+            "values": {
+                "∅ None": {
+                    "--capylock-numpad-bg": [
+                        "#00000000"
+                    ]
+                },
+                "OLED Black": {
+                    "--capylock-numpad-bg": [
+                        "#000"
+                    ]
+                },
+                "Dark Gray": {
+                    "--capylock-numpad-bg": [
+                        "#141414"
+                    ]
+                },
+                "Bright Gray": {
+                    "--capylock-numpad-bg": [
+                        "#bdbdbd"
+                    ]
+                },
+                "Transparent Black": {
+                    "--capylock-numpad-bg": [
+                        "#00000080"
+                    ]
+                },
+                "Transparent White": {
+                    "--capylock-numpad-bg": [
+                        "#ffffff80"
+                    ]
+                },
+                "Marine Blue": {
+                    "--capylock-numpad-bg": [
+                        "#0d1226"
+                    ]
+                },
+                "Earthy Brown": {
+                    "--capylock-numpad-bg": [
+                        "#241e20"
+                    ]
+                },
+                "Wine Red": {
+                    "--capylock-numpad-bg": [
+                        "#400b1e"
+                    ]
+                },
+                "Beige": {
+                    "--capylock-numpad-bg": [
+                        "#b5ada1"
+                    ]
+                },
+                "Aubergine": {
+                    "--capylock-numpad-bg": [
+                        "#2a0f30"
+                    ]
+                },
+                "Orange": {
+                    "--capylock-numpad-bg": [
+                        "#9c3b1e"
+                    ]
+                },
+                "⚙️ Gradient...": {
+                    "cl_numpad_gradient.css": []
+                }
+            },
+            "components": [
+                {
+                    "name": "Gradient Color 1",
+                    "type": "color-picker",
+                    "on": "⚙️ Gradient...",
+                    "default": "#34c58e",
+                    "css_variable": "capylock-numpad-bg-grad1",
+                    "tabs": []
+                },
+                {
+                    "name": "Gradient Color 2",
+                    "type": "color-picker",
+                    "on": "⚙️ Gradient...",
+                    "default": "#2e5f80",
+                    "css_variable": "capylock-numpad-bg-grad2",
+                    "tabs": []
+                }
+            ]
+        },
+        "NumPad Keys": {
+            "type": "dropdown",
+            "default": "White",
+            "values": {
+                "White": {
+                    "--capylock-numpad-fg": [
+                        "#fff"
+                    ]
+                },
+                "Black": {
+                    "--capylock-numpad-fg": [
+                        "#000"
+                    ]
+                },
+                "⚙️ Custom...": {}
+            },
+            "components": [
+                {
+                    "name": "Color Picker",
+                    "type": "color-picker",
+                    "on": "⚙️ Custom...",
+                    "default": "#eee",
+                    "css_variable": "capylock-numpad-fg",
+                    "tabs": []
+                }
+            ]
+        },
+        "Profile Background": {
+            "type": "dropdown",
+            "default": "OLED Black",
+            "values": {
+                "∅ None": {
+                    "--capylock-profile-bg": [
+                        "#00000000"
+                    ]
+                },
+                "OLED Black": {
+                    "--capylock-profile-bg": [
+                        "#000"
+                    ]
+                },
+                "Dark Gray": {
+                    "--capylock-profile-bg": [
+                        "#141414"
+                    ]
+                },
+                "Bright Gray": {
+                    "--capylock-profile-bg": [
+                        "#bdbdbd"
+                    ]
+                },
+                "Transparent Black": {
+                    "--capylock-profile-bg": [
+                        "#00000080"
+                    ]
+                },
+                "Transparent White": {
+                    "--capylock-profile-bg": [
+                        "#ffffff80"
+                    ]
+                },
+                "Marine Blue": {
+                    "--capylock-profile-bg": [
+                        "#0d1226"
+                    ]
+                },
+                "Earthy Brown": {
+                    "--capylock-profile-bg": [
+                        "#241e20"
+                    ]
+                },
+                "Wine Red": {
+                    "--capylock-profile-bg": [
+                        "#400b1e"
+                    ]
+                },
+                "Beige": {
+                    "--capylock-profile-bg": [
+                        "#b5ada1"
+                    ]
+                },
+                "Aubergine": {
+                    "--capylock-profile-bg": [
+                        "#2a0f30"
+                    ]
+                },
+                "Orange": {
+                    "--capylock-profile-bg": [
+                        "#9c3b1e"
+                    ]
+                },
+                "⚙️ Gradient...": {
+                    "cl_profile_gradient.css": []
+                }
+            },
+            "components": [
+                {
+                    "name": "Gradient Color 1",
+                    "type": "color-picker",
+                    "on": "⚙️ Gradient...",
+                    "default": "#34c58e",
+                    "css_variable": "capylock-profile-bg-grad1",
+                    "tabs": []
+                },
+                {
+                    "name": "Gradient Color 2",
+                    "type": "color-picker",
+                    "on": "⚙️ Gradient...",
+                    "default": "#2e5f80",
+                    "css_variable": "capylock-profile-bg-grad2",
+                    "tabs": []
+                }
+            ]
+        },
+        "Empty Indicators": {
+            "type": "dropdown",
+            "default": "White",
+            "values": {
+                "White": {
+                    "--capylock-digit-empty": [
+                        "#fff"
+                    ]
+                },
+                "Black": {
+                    "--capylock-digit-empty": [
+                        "#000"
+                    ]
+                },
+                "⚙️ Custom...": {}
+            },
+            "components": [
+                {
+                    "name": "Color Picker",
+                    "type": "color-picker",
+                    "on": "⚙️ Custom...",
+                    "default": "#eee",
+                    "css_variable": "capylock-digit-empty",
+                    "tabs": []
+                }
+            ]
+        },
+        "Filled Indicators": {
+            "type": "dropdown",
+            "default": "White",
+            "values": {
+                "White": {
+                    "--capylock-digit-fill": [
+                        "#fff"
+                    ]
+                },
+                "Black": {
+                    "--capylock-digit-fill": [
+                        "#000"
+                    ]
+                },
+                "⚙️ Custom...": {}
+            },
+            "components": [
+                {
+                    "name": "Color Picker",
+                    "type": "color-picker",
+                    "on": "⚙️ Custom...",
+                    "default": "#eee",
+                    "css_variable": "capylock-digit-fill",
+                    "tabs": []
+                }
+            ]
+        },
+        "Hide Empty Indicators": {
+            "type": "checkbox",
+            "default": "No",
+            "values": {
+                "Yes": {
+                    "cl_opt_indicators.css": []
+                },
+                "No": {}
+            }
+        },
+        "Container Edges": {
+            "type": "slider",
+            "default": "Sharp",
+            "values": {
+                "Sharp": {
+                    "--capylock-container-roundRadius": [
+                        "0"
+                    ]
+                },
+                "Round": {
+                    "--capylock-container-roundRadius": [
+                        "18px"
+                    ]
+                }
+            }
+        }
+    }
+}

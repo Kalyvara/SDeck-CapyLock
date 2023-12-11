@@ -1,0 +1,142 @@
+/* ---
+CapyLock
+v0.1
+--- */
+
+@keyframes capylock-anim-digit-pop {
+    50%  { transform: scale(1.4); }
+}
+
+/* Wrapper */
+
+.lockscreen_Container_3rFFU {
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--capylock-lock-bg);
+}
+
+/* NumPad container */
+
+.lockscreen_NumericButtonInput_2wl_h {
+    align-self: flex-start;
+    display: grid;
+    margin-left: 15px;
+    margin-bottom: calc(40px + 8px);
+    grid-template-columns: repeat(5, 1);
+    grid-template-rows: repeat(5, 1);
+    grid-column-gap: 32px;
+    /* grid-column-gap: 24px; */
+    grid-row-gap: 0;
+    background: var(--capylock-numpad-bg);
+    border-radius: var(--capylock-container-roundRadius);
+    padding: 12px 32px 12px 32px;
+    /* padding: 2px 24px 2px 24px; */
+}
+
+.lockscreen_NumericButtonOption_2c4Hz:last-child { /* re-positioning the 0 key */
+    grid-column: 5;
+}
+
+/* NumPad > Keys */
+
+.lockscreen_NumericButtonOption_2c4Hz {
+    color: var(--capylock-numpad-fg);
+}
+
+.lockscreen_NumericButtonOption_2c4Hz > img {
+    display: none;
+}
+
+/* Prompts */
+
+.lockscreen_Details_aLaNw {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    padding-top: calc(40px + 12px);
+}
+
+.lockscreen_Details_aLaNw .lockscreen_Prompt_3aUT8 {
+    color: var(--capylock-header-fg);
+}
+
+.lockscreen_Directions_vNjDQ {
+    color: var(--capylock-header-fg) !important;
+}
+
+.lockscreen_Details_aLaNw .lockscreen_IncorrectPIN_OmybP {
+    color: var(--capylock-header-fg);
+}
+
+/* Avatar container */
+
+.lockscreen_Details_aLaNw::before {
+    position: absolute;
+    right: 15px;
+    bottom: calc(40px + 8px);
+    width: 248px; height: 174px;
+    background: var(--capylock-profile-bg);
+    border-radius: var(--capylock-container-roundRadius);
+    content: "";
+}
+
+/* Avatar */
+
+.lockscreen_Details_aLaNw div > img {
+    position: absolute;
+    bottom: 62px;
+    right: 45px;
+    border-radius: 100px;
+    transform: scale(0.6);
+    visibility: visible;
+}
+
+/* Indicators */
+
+.lockscreen_Indicators_3fJq6 {
+    position: absolute;
+    right: 30px;
+    bottom: calc(40px + 12px);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.lockscreen_DigitIndicator_3eHNj:not(.lockscreen_Filled_i68Yl) {
+    border: 2px solid var(--capylock-digit-empty);
+}
+
+.lockscreen_Filled_i68Yl {
+    animation: capylock-anim-digit-pop 0.2s linear 1;
+    background: var(--capylock-digit-fill) !important;
+    border: 2px solid var(--capylock-digit-fill) !important;
+}
+
+/* Option: Change color of numpad on focus
+
+.lockscreen_NumericButtonInput_2wl_h .lockscreen_NumericButtonOption_2c4Hz {
+    transition: color .5s ease;
+}
+
+.lockscreen_NumericButtonInput_2wl_h.gpfocus .lockscreen_NumericButtonOption_2c4Hz {
+    color: red;
+} */
+
+/* Attempt to change the button images. Tricky as they are rendered using the 'img' HTML tag.
+=> Works but for some reason images disappear on input. Might have to investigate this further.
+
+.lockscreen_NumericButtonOption_2c4Hz {
+    height: 1.6em;
+    width: 1.6em;
+    overflow: hidden;
+    display: inline-flex;
+    color: red;
+}
+
+.lockscreen_NumericButtonOption_2c4Hz > img {
+    position: relative;
+    height: 1.6em;
+    width: 1.6em;
+    left: -1.6em;
+    filter: drop-shadow(1.6em 0 0px red);
+    transform: none !important;
+} */
